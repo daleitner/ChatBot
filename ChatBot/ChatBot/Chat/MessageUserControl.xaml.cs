@@ -12,25 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ChatBot.Services;
 
 namespace ChatBot.Chat
 {
 	/// <summary>
-	/// Interaction logic for ChatUserControl.xaml
+	/// Interaction logic for MessageUserControl.xaml
 	/// </summary>
-	public partial class ChatUserControl : UserControl
+	public partial class MessageUserControl : UserControl
 	{
-		public ChatUserControl()
+		public MessageUserControl()
 		{
 			InitializeComponent();
-			EventService.GetInstance().ScrollEvent += ChatUserControl_ScrollEvent;
-			this.TextBox1.Focus();
-		}
-
-		private void ChatUserControl_ScrollEvent()
-		{
-			this.ScrollViewer1.ScrollToBottom();
 		}
 	}
 }

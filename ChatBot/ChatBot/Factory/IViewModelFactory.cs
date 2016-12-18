@@ -11,7 +11,7 @@ namespace ChatBot.Factory
 	public interface IViewModelFactory
 	{
 		LoginViewModel GetLoginViewModel();
-		ChatViewModel GetChatViewModel();
+		ChatViewModel GetChatViewModel(string name);
 	}
 
 }

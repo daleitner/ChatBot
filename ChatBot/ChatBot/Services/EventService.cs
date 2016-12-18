@@ -7,6 +7,9 @@ namespace ChatBot.Services
         public delegate void DisplayChangedEventHandler(DisplayEnum displayEnum, List<object> eventArgs);
         public event DisplayChangedEventHandler DisplayChanged = null;
 
+	    public delegate void ScrollEventHandler();
+
+	    public event ScrollEventHandler ScrollEvent = null;
         #region singelton
         private static EventService instance;
         private EventService()
@@ -34,5 +37,11 @@ namespace ChatBot.Services
 			if (this.DisplayChanged != null)
 				this.DisplayChanged(displayEnum, eventArgs);
 		}
-	}
+
+	    public void PublishScrollEvent()
+	    {
+		    if (this.ScrollEvent != null)
+			    this.ScrollEvent();
+	    }
+    }
 }

@@ -28,9 +28,9 @@ namespace ChatBot.Factory
 			return new LoginViewModel(this.eventService);
 		}
 
-		public ChatViewModel GetChatViewModel()
+		public ChatViewModel GetChatViewModel(string name)
 		{
-			return new ChatViewModel();
+			return new ChatViewModel(name, this.eventService);
 		}
 	}
 }

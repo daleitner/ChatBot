@@ -62,12 +62,20 @@
       <DependentUpon>ChatUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Chat\ChatViewModel.cs" />
+    <Compile Include="Chat\MessageUserControl.xaml.cs">
+      <DependentUpon>MessageUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chat\MessageViewModel.cs" />
     <Compile Include="Factory\IViewModelFactory.cs" />
     <Compile Include="Factory\ViewModelFactory.cs" />
     <Compile Include="Services\DisplayEnum.cs" />
     <Compile Include="Services\EventService.cs" />
     <Compile Include="Services\IEventService.cs" />
     <Page Include="Chat\ChatUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Chat\MessageUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -6,5 +6,6 @@ namespace ChatBot.Services
     {
         void PublishDisplayChangedEvent(DisplayEnum displayEnum);
 		void PublishDisplayChangedEvent(DisplayEnum displayEnum, List<object> eventArgs);
+	    void PublishScrollEvent();
     }
 }

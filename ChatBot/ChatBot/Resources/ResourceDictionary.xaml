@@ -8,4 +8,7 @@
 	<DataTemplate DataType="{x:Type login:LoginViewModel}">
 		<login:LoginUserControl/>
 	</DataTemplate>
+	<DataTemplate DataType="{x:Type chat:MessageViewModel}">
+		<chat:MessageUserControl/>
+	</DataTemplate>
 </ResourceDictionary>

@@ -37,7 +37,7 @@ namespace ChatBot
 			switch (displayEnum)
 			{
 				case DisplayEnum.Chat:
-					this.Content = this.factory.GetChatViewModel();
+					this.Content = this.factory.GetChatViewModel(eventArgs[0].ToString());
 					break;
 				case DisplayEnum.Cancel:
 					this.CloseHelp = true;

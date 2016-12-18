@@ -81,7 +81,8 @@ namespace ChatBot.Login
 		private void Login()
 		{
 			if((this.UserName == "Jarvis" && this.Password == "Ironman" )||( this.UserName == "Foxy" && this.Password == "Meli"))
-			this.eventService.PublishDisplayChangedEvent(DisplayEnum.Chat, new List<object>() {this.UserName, this.Password});
+				//this.eventService.PublishDisplayChangedEvent(DisplayEnum.Chat, new List<object>() {this.UserName, this.Password});
+				this.eventService.PublishDisplayChangedEvent(DisplayEnum.Chat, new List<object>() { "Foxy", "Meli" });
 		}
 
 		private void Cancel()
