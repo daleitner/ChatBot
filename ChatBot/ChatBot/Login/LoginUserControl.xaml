@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="ChatBot.Login.LoginUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ChatBot.Login"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+         <Label Content="Login" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="25" Margin="30"></Label>   
+		<Label Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,120,0,0"></Label>
+		<TextBox Text="{Binding Path=UserName}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,125,0,0" Width="100"></TextBox>
+		<Label Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,150,0,0"></Label>
+		<TextBox Text="{Binding Path=Password}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,155,0,0" Width="100"></TextBox>
+		<Button Command="{Binding Path=LoginCommand}" Content="Login" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="10"></Button>
+		<Button Command="{Binding Path=CancelCommand}" Content="Cancel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="10,10,90,10"></Button>
+	</Grid>
+</UserControl>

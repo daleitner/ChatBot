@@ -26,6 +26,11 @@ namespace ChatBot
             this.viewModel = new MainViewModel();
             this.DataContext = viewModel;
         }
+
+	    private void ToggleButton_OnChecked(object sender, RoutedEventArgs e)
+	    {
+		    this.Close();
+	    }
     }
 }
 

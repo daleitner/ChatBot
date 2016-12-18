@@ -1,7 +1,11 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:an="clr-namespace:ChatBot">
-    <!--<DataTemplate DataType="{x:Type an:<<ViewModel>>}">
-        <an:<<View>> />
-    </DataTemplate>-->
+                    xmlns:chat="clr-namespace:ChatBot.Chat"
+					xmlns:login="clr-namespace:ChatBot.Login">
+    <DataTemplate DataType="{x:Type chat:ChatViewModel}">
+        <chat:ChatUserControl/>
+    </DataTemplate>
+	<DataTemplate DataType="{x:Type login:LoginViewModel}">
+		<login:LoginUserControl/>
+	</DataTemplate>
 </ResourceDictionary>
