@@ -19,15 +19,20 @@ namespace ChatBot.Chat
 		private string status = "";
 		private string message = "";
 		private bool xMode = false;
-		private readonly IEventService eventService;
+		private readonly EventService eventService;
+		private readonly MessageQueue queue;
+		private readonly MessageListener listener;
 		#endregion
 
 		#region ctors
-		public ChatViewModel(string name, IEventService eventService)
+		public ChatViewModel(string name, EventService eventService)
 		{
+			this.queue = MessageQueue.GetInstance(eventService);
 			this.name = name;
 			this.eventService = eventService;
-			this.status = "Online";
+			this.eventService.GetResponse += EventService_GetResponse;
+			this.eventService.ChangeState += EventService_ChangeState;
+			EventService_ChangeState(StateEnum.Online);
 			this.path = new Uri(Path.GetFullPath("images"));
 			if (this.Name == "Foxy")
 			{
@@ -45,6 +50,27 @@ namespace ChatBot.Chat
 				}
 			}
 			this.messages = new ObservableCollection<MessageViewModel>();
+			this.listener = new MessageListener(eventService, this.xMode);
+		}
+
+		private void EventService_ChangeState(StateEnum state)
+		{
+			switch (state)
+			{
+				case StateEnum.Online:
+					this.Status = "Online";
+					break;
+					case StateEnum.Writing:
+					this.Status = "Schreibt...";
+					break;
+			}
+		}
+
+		private void EventService_GetResponse(string response)
+		{
+			this.Messages.Add(new MessageViewModel(response, false, this.xMode));
+			EventService_ChangeState(StateEnum.Online);
+			this.eventService.PublishScrollEvent();
 		}
 		#endregion
 
@@ -128,7 +154,7 @@ namespace ChatBot.Chat
 		private void Send()
 		{
 			this.Messages.Add(new MessageViewModel(this.Message, true, false));
-			this.Messages.Add(new MessageViewModel(this.Message, false, this.xMode));
+			this.queue.Add(this.Message);
 			this.Message = "";
 			this.eventService.PublishScrollEvent();
 		}

@@ -11,7 +11,7 @@ namespace ChatBot.Factory
 {
 	public class ViewModelFactory : IViewModelFactory
 	{
-		private readonly IEventService eventService;
+		private readonly EventService eventService;
 		private static ViewModelFactory factory;
 		private ViewModelFactory()
 		{
