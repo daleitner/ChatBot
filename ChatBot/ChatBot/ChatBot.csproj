@@ -38,6 +38,13 @@
     <Reference Include="Base">
       <HintPath>..\References\Base.dll</HintPath>
     </Reference>
+    <Reference Include="DataBaseInitializer">
+      <HintPath>..\References\DataBaseInitializer.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLDatabase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\SQLDatabase.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -70,9 +77,11 @@
     <Compile Include="Chat\MessageViewModel.cs" />
     <Compile Include="Factory\IViewModelFactory.cs" />
     <Compile Include="Factory\ViewModelFactory.cs" />
+    <Compile Include="Services\CommandService.cs" />
     <Compile Include="Services\DisplayEnum.cs" />
     <Compile Include="Services\EventService.cs" />
     <Compile Include="Services\IEventService.cs" />
+    <Compile Include="Services\QueryService.cs" />
     <Compile Include="Services\StateEnum.cs" />
     <Page Include="Chat\ChatUserControl.xaml">
       <SubType>Designer</SubType>
@@ -138,6 +147,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChatBot.Models\ChatBot.Models.csproj">
+      <Project>{3c44dc70-b006-4622-80a8-f64a046930f8}</Project>
+      <Name>ChatBot.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,13 @@
+<Mapping>
+	<Table name="Messages" csobject="Message">
+		<Column name="Mid" attribute="Id" type="VARCHAR" />
+		<Column name="Request" attribute="Request" type="VARCHAR" />
+		<Column name="Response" attribute="Response" type="VARCHAR" />
+		<Column name="IsXMode" attribute="IsXMode" type="BOOLEAN" />
+	</Table>
+	<Table name="Configurations" csobject="Configuration">
+		<Column name="Cid" attribute="Id" type="VARCHAR" />
+		<Column name="Parameter" attribute="Parameter" type="VARCHAR" />
+		<Column name="Value" attribute="Value" type="VARCHAR" />
+	</Table>
+</Mapping>

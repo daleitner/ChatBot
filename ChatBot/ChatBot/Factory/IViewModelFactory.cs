@@ -12,6 +12,7 @@ namespace ChatBot.Factory
 	{
 		LoginViewModel GetLoginViewModel();
 		ChatViewModel GetChatViewModel(string name);
+		MessageListener GetMessageListener(bool isXMode);
 	}
 
 }

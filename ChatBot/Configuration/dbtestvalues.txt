@@ -1,0 +1,11 @@
+INSERT INTO Messages VALUES("84469519-D15A-4D9F-B2FC-7D3A1E1D1276", "HALLO", "Guten Tag, Sir!|Hallo Daniel. Schön, dass Sie wieder da sind. Was kann ich für Sie tun?|Herzlich Willkommen!", "false");
+INSERT INTO Messages VALUES("84469519-D15A-4D9F-B2FC-7D3A1E1D1277", "HALLO JARVIS", "Guten Tag, Sir!|Hallo Daniel. Schön, dass Sie wieder da sind. Was kann ich für Sie tun?|Herzlich Willkommen!", "true");
+INSERT INTO Messages VALUES("84469519-D15A-4D9F-B2FC-7D3A1E1D1278", "HI", "Guten Tag, Sir!|Hallo Daniel. Schön, dass Sie wieder da sind. Was kann ich für Sie tun?|Herzlich Willkommen!", "false");
+INSERT INTO Messages VALUES("84469519-D15A-4D9F-B2FC-7D3A1E1D1279", "HI JARVIS", "Guten Tag, Sir!|Hallo Daniel. Schön, dass Sie wieder da sind. Was kann ich für Sie tun?|Herzlich Willkommen!", "false");
+INSERT INTO Messages VALUES("84469519-D15A-4D9F-B2FC-7D3A1E1D1270", "GUTEN MORGEN", "Guten Morgen, Sir!|Hallo Daniel. Schön, dass Sie wieder da sind. Was kann ich für Sie tun?|Herzlich Willkommen!", "false");
+INSERT INTO Messages VALUES("84469519-D15A-4D9F-B2FC-7D3A1E1D127A", "GUTEN MORGEN, JARVIS", "Guten Morgen, Sir!|Hallo Daniel. Schön, dass Sie wieder da sind. Was kann ich für Sie tun?|Herzlich Willkommen!", "false");
+INSERT INTO Messages VALUES("84469519-D15A-4D9F-B2FC-7D3A1E1D127B", "GUTEN ABEND", "Guten Abend, Sir!|Hallo Daniel. Schön, dass Sie wieder da sind. Was kann ich für Sie tun?|Herzlich Willkommen!", "false");
+INSERT INTO Messages VALUES("84469519-D15A-4D9F-B2FC-7D3A1E1D127C", "GUTEN ABEND JARVIS", "Guten Abend, Sir!|Hallo Daniel. Schön, dass Sie wieder da sind. Was kann ich für Sie tun?|Herzlich Willkommen!", "false");
+INSERT INTO Messages VALUES("84469519-D15A-4D9F-B2FC-7D3A1E1D127D", "MORGEN JARVIS", "Guten Morgen, Sir!|Hallo Daniel. Schön, dass Sie wieder da sind. Was kann ich für Sie tun?|Herzlich Willkommen!", "false");
+INSERT INTO Messages VALUES("84469519-D15A-4D9F-B2FC-7D3A1E1D127E", "MORGEN", "Guten Morgen, Sir!|Hallo Daniel. Schön, dass Sie wieder da sind. Was kann ich für Sie tun?|Herzlich Willkommen!", "false");
+

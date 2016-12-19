@@ -12,10 +12,14 @@ namespace ChatBot.Factory
 	public class ViewModelFactory : IViewModelFactory
 	{
 		private readonly EventService eventService;
+		private readonly QueryService queryService;
+		private readonly CommandService commandService;
 		private static ViewModelFactory factory;
 		private ViewModelFactory()
 		{
 			this.eventService = EventService.GetInstance();
+			this.queryService = new QueryService();
+			this.commandService = new CommandService();
 		}
 
 		public static ViewModelFactory GetInstance()
@@ -30,7 +34,12 @@ namespace ChatBot.Factory
 
 		public ChatViewModel GetChatViewModel(string name)
 		{
-			return new ChatViewModel(name, this.eventService);
+			return new ChatViewModel(name, this.eventService, this);
+		}
+
+		public MessageListener GetMessageListener(bool isXMode)
+		{
+			return new MessageListener(this.eventService, this.queryService, isXMode);
 		}
 	}
 }

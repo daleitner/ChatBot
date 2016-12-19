@@ -10,6 +10,7 @@ using Base;
 using ChatBot.Factory;
 using ChatBot.Login;
 using ChatBot.Services;
+using DataBaseInitializer;
 
 namespace ChatBot
 {
@@ -26,6 +27,19 @@ namespace ChatBot
 		#region ctors
 		public MainViewModel()
         {
+			var setup = Directory.GetCurrentDirectory() + "\\database.xml";
+			var testValueFile = Directory.GetCurrentDirectory() + "\\dbtestvalues.txt";
+			var mappingPath = Directory.GetCurrentDirectory() + "\\mapping.xml";
+
+			try
+			{
+				var dbCreator = DataBaseManager.GetInstance(setup, mappingPath, testValueFile);
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e.Message);
+			}
+
 			this.eventService = EventService.GetInstance();
 			this.eventService.DisplayChanged += eventService_DisplayChanged;
 			this.factory = ViewModelFactory.GetInstance();

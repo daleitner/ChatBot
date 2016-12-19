@@ -15,10 +15,12 @@ namespace ChatBot.Chat
 		private readonly MessageQueue queue;
 		private readonly BackgroundWorker worker = new BackgroundWorker();
 		private readonly EventService eventService;
-		public MessageListener(EventService eventService, bool isXMode)
+		private readonly QueryService queryService;
+		public MessageListener(EventService eventService, QueryService queryService, bool isXMode)
 		{
 			this.IsBusy = false;
 			this.isXMode = isXMode;
+			this.queryService = queryService;
 			this.eventService = eventService;
 			this.eventService.GetMessage += EventService_GetMessage;
 			this.queue = MessageQueue.GetInstance(eventService);
@@ -37,10 +39,11 @@ namespace ChatBot.Chat
 			do
 			{
 				var message = this.queue.GetNextMessage();
-				this.response = message + ", von Bot";
-				//this.eventService.PublishGetResponse(message + ", Süßer!");
 				System.Threading.Thread.Sleep(1000);
 				this.eventService.PublishChangeState(StateEnum.Writing);
+				this.response = this.queryService.GetResponse(message);
+				if (string.IsNullOrEmpty(this.response))
+					this.response = "Tut mir leid, das verstehe ich nicht.";
 				System.Threading.Thread.Sleep(1000);
 				this.queue.Remove();
 			} while (!this.queue.IsEmpty());

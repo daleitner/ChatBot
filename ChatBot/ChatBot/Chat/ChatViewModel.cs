@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using Base;
+using ChatBot.Factory;
 using ChatBot.Services;
 
 namespace ChatBot.Chat
@@ -25,7 +26,7 @@ namespace ChatBot.Chat
 		#endregion
 
 		#region ctors
-		public ChatViewModel(string name, EventService eventService)
+		public ChatViewModel(string name, EventService eventService, IViewModelFactory factory)
 		{
 			this.queue = MessageQueue.GetInstance(eventService);
 			this.name = name;
@@ -50,7 +51,7 @@ namespace ChatBot.Chat
 				}
 			}
 			this.messages = new ObservableCollection<MessageViewModel>();
-			this.listener = new MessageListener(eventService, this.xMode);
+			this.listener = factory.GetMessageListener(this.xMode);
 		}
 
 		private void EventService_ChangeState(StateEnum state)

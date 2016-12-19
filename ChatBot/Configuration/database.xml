@@ -1,0 +1,15 @@
+<Database name="Chatbot">
+<Tables>
+	<Table name="Messages">
+		<Column name="Mid" type="VARCHAR" primarykey="true" />
+		<Column name="Request" type="VARCHAR" />
+		<Column name="Response" type="VARCHAR" />
+		<Column name="IsXMode" type="BOOLEAN" />
+	</Table>
+	<Table name="Configurations">
+		<Column name="Cid" type="VARCHAR" primarykey="true" />
+		<Column name="Parameter" type="VARCHAR" />
+		<Column name="Value" type="VARCHAR" />
+	</Table>
+</Tables>
+</Database>
